@@ -1,0 +1,18 @@
+version: '3.11'
+
+services:
+  db:
+    image: postgres:15
+    container_name: IMA-services
+    restart: always
+    environment:
+      POSTGRES_USER: diptu
+      POSTGRES_PASSWORD: Hello123
+      POSTGRES_DB: iam_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
